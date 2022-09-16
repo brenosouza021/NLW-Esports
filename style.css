@@ -36,6 +36,11 @@ body {
     background-color: #121214;
 }
 
+header {
+    margin-top: 32px;
+    height: calc(120px + 32px);
+}
+
 main {
     max-width: 580px;
     width: 90%;
@@ -47,6 +52,7 @@ main {
 
 ul li {
     list-style: none;
+    transition: transform 0.3s;
 }
 
 ul {
@@ -55,10 +61,21 @@ ul {
     margin-top: 24px;
 }
 
-header img {
+header div {
+    height: 120px;
     width: 120px;
-    border: 4px solid red;
+    margin: 32px auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
     border-radius: 50%;
+    display: flex;
+    transition: transform 0.3s;
+    animation: fromTop 0.4s backwards;
+}
+
+header img {
+    width: 100%;
+    border-radius: 50%;
+    padding: 4px;
 }
 
 .section-1 img {
@@ -80,4 +97,25 @@ section {
     background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
     padding-top: 4px;
     border-radius: 10px;
+}
+/* animations */
+
+header div:hover {
+    transform: scale(1.1);
+}
+
+ul li:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
 }
